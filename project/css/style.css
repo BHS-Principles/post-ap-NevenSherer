@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
+    overflow: hidden;
+    background-color: #0a0a0a;
+}
+
+.banner a {
+    float: left;
+    text-align: center;
+    color: #f0f0f0;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.banner a:hover {
+    background-color: #f0f0f0;
+    color: #0a0a0a;
+    cursor: pointer;
+}
+
+.banner a.active {
+    background-color: rgb(40, 160, 255);
+    color: #f0f0f0;
+}
+
+.banner-right {
+    float: right;
+}
