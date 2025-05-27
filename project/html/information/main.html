@@ -6,12 +6,10 @@
         <script src="../../js/top-bar.js"></script>
         <title>Please enable Java Script</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <div id="title-bar" data-info="home">
+        <div id="title-bar" data-info="home, Home">
             <script>
                 (function() {
-                    let div = document.getElementById("title-bar")
-                    let data_value = div.getAttribute("data-info");
-                    create_top_bar(data_value);
+                    create_top_bar(document.getElementById("title-bar").getAttribute("data-info"));
                 })();
             </script>
         </div>
