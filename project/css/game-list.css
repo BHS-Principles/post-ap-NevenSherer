@@ -1,0 +1,23 @@
+a:link {
+    text-decoration: none;
+}
+
+.game-button {
+    margin-top: 1.67dvw;
+    margin-bottom: 1.67dvw;
+    margin-left: 1.67dvw;
+    margin-right: 1.67dvw;
+    width: 29.44dvw;
+    display: inline-block;
+}
+
+.game-button-link {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
