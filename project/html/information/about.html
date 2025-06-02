@@ -9,9 +9,7 @@
         <div id="title-bar" data-info="about, About">
             <script>
                 (function() {
-                    let div = document.getElementById("title-bar")
-                    let data_value = div.getAttribute("data-info");
-                    create_top_bar(data_value);
+                    create_top_bar(document.getElementById("title-bar").getAttribute("data-info"));
                 })();
             </script>
         </div>
