@@ -33,6 +33,11 @@ class Player {
     constructor (name) {
         this.name = name;
         this.hand = [];
+        this.in_game;
+    }
+
+    join_game(game) {
+        this.in_game = game;
     }
 }
 
@@ -52,6 +57,12 @@ class Deck {
         return this.cards;
     }
 
+    update_screen() {
+        for (var i = 0; i < this.players.length; i++) {
+            players[i].illustrate();
+        }
+    }
+
     shuffle() {
         for (var i = 0; i < this.card_count; i++) {
             let rand = Math.floor(Math.random() * this.card_count);
@@ -64,6 +75,8 @@ class Deck {
 
 class Game {
     constructor (size, players) {
+        this.table = document.getElementById("target")
+
         this.deck = new Deck(size);
         this.players = [];
         for (var i = 0; i < players; i++) {
@@ -77,18 +90,14 @@ class Game {
     }
 
     start_game() {
+        for (var i = 0; i < this.players.length; i++) {
+            this.players[i].join_game(this)
+        }
+
         this.deal(1);
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
-        this.fight();
+        while (this.next_card < (52 - this.players.length)) {
+            this.fight();
+        }
     }
 
     end_game() {
@@ -99,6 +108,12 @@ class Game {
         for (var i = 0; i < (cards_per_person * this.players.length); i++){
             this.draw()
         }
+    }
+
+    update_screen() {
+        /*for (var i = 0; i < this.players.length; i++) {
+            this.players[i].illustrate();
+        }*/
     }
 
     draw() {
@@ -131,6 +146,7 @@ class Game {
         this.deal(1);
 
         console.log(winner_announcement)
+        this.update_screen()
     }
 
     discard(player) {
