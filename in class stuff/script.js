@@ -57,12 +57,6 @@ class Deck {
         return this.cards;
     }
 
-    update_screen() {
-        for (var i = 0; i < this.players.length; i++) {
-            players[i].illustrate();
-        }
-    }
-
     shuffle() {
         for (var i = 0; i < this.card_count; i++) {
             let rand = Math.floor(Math.random() * this.card_count);
@@ -129,8 +123,7 @@ class Game {
     }
 
     fight() {
-        var field = []
-        this.players[0].hand[0].id 
+        var field = [];
         for (var i = 0; i < this.players.length; i++) {
             field.push(this.players[i].hand[0].val);
             this.discard(this.players[i]);
